@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol StyledTextViewDelegate: class {
+public protocol StyledTextViewDelegate: AnyObject {
     func didTap(view: StyledTextView, attributes: NSAttributedStringAttributesType, point: CGPoint)
     func didLongPress(view: StyledTextView, attributes: NSAttributedStringAttributesType, point: CGPoint)
 }

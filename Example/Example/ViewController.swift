@@ -14,6 +14,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func presentSwiftUI(_ sender: Any) {
 
+    }
+
+    @IBAction func presentUIKit(_ sender: Any) {
+
+    }
 }
 

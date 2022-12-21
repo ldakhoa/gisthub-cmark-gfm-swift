@@ -15,12 +15,15 @@ let package = Package(
         .library(
             name: "StyledTextKit",
             targets: ["StyledTextKit"]),
+        .library(
+            name: "cmark-gfm-swift",
+            targets: ["cmark-gfm-swift", "cmark_gfm"])
     ],
     dependencies: [],
     targets: [
         .target(
             name: "GistHubMarkdownEditor",
-            dependencies: []
+            dependencies: ["StyledTextKit"]
         ),
         .testTarget(
             name: "GistHubMarkdownEditorTests",
@@ -34,5 +37,13 @@ let package = Package(
             name: "StyledTextKitTests",
             dependencies: ["StyledTextKit"]
         ),
+        .target(
+            name: "cmark-gfm-swift",
+            dependencies: ["cmark_gfm"]
+        ),
+        .target(
+            name: "cmark_gfm",
+            path: "Sources/cmark_gfm"
+        )
     ]
 )
