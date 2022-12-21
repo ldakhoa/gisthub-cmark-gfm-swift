@@ -12,14 +12,27 @@ let package = Package(
         .library(
             name: "GistHubMarkdownEditor",
             targets: ["GistHubMarkdownEditor"]),
+        .library(
+            name: "StyledTextKit",
+            targets: ["StyledTextKit"]),
     ],
     dependencies: [],
     targets: [
         .target(
             name: "GistHubMarkdownEditor",
-            dependencies: []),
+            dependencies: []
+        ),
         .testTarget(
             name: "GistHubMarkdownEditorTests",
-            dependencies: ["GistHubMarkdownEditor"]),
+            dependencies: ["GistHubMarkdownEditor"]
+        ),
+        .target(
+            name: "StyledTextKit",
+            dependencies: []
+        ),
+        .testTarget(
+            name: "StyledTextKitTests",
+            dependencies: ["StyledTextKit"]
+        ),
     ]
 )
