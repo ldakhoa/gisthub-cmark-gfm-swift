@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A2AADE0295491A100F50194 /* GistHubMarkdownEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 6A2AADDF295491A100F50194 /* GistHubMarkdownEditor */; };
 		6A3775422953C06C00C5C627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3775412953C06C00C5C627 /* AppDelegate.swift */; };
 		6A3775442953C06C00C5C627 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3775432953C06C00C5C627 /* SceneDelegate.swift */; };
 		6A3775462953C06C00C5C627 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3775452953C06C00C5C627 /* ViewController.swift */; };
 		6A3775492953C06C00C5C627 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A3775472953C06C00C5C627 /* Main.storyboard */; };
 		6A37754B2953C06D00C5C627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A37754A2953C06D00C5C627 /* Assets.xcassets */; };
 		6A37754E2953C06D00C5C627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A37754C2953C06D00C5C627 /* LaunchScreen.storyboard */; };
-		6A3775602953C16000C5C627 /* GistHubMarkdownEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 6A37755F2953C16000C5C627 /* GistHubMarkdownEditor */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A3775602953C16000C5C627 /* GistHubMarkdownEditor in Frameworks */,
+				6A2AADE0295491A100F50194 /* GistHubMarkdownEditor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +104,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				6A37755F2953C16000C5C627 /* GistHubMarkdownEditor */,
+				6A2AADDF295491A100F50194 /* GistHubMarkdownEditor */,
 			);
 			productName = Example;
 			productReference = 6A37753E2953C06C00C5C627 /* Example.app */;
@@ -134,6 +134,8 @@
 				Base,
 			);
 			mainGroup = 6A3775352953C06C00C5C627;
+			packageReferences = (
+			);
 			productRefGroup = 6A37753F2953C06C00C5C627 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -383,7 +385,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6A37755F2953C16000C5C627 /* GistHubMarkdownEditor */ = {
+		6A2AADDF295491A100F50194 /* GistHubMarkdownEditor */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = GistHubMarkdownEditor;
 		};

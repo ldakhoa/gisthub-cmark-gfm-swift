@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GistHubMarkdownEditor
 
 class ViewController: UIViewController {
 
@@ -19,7 +20,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func presentUIKit(_ sender: Any) {
-
+        present(MarkdownViewController(), animated: true)
     }
 }
 

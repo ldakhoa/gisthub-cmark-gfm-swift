@@ -17,18 +17,21 @@ let package = Package(
             targets: ["StyledTextKit"]),
         .library(
             name: "cmark-gfm-swift",
-            targets: ["cmark-gfm-swift", "cmark_gfm"])
+            targets: ["cmark-gfm-swift"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/alexaubry/HTMLString", from: "6.0.0"),
+    ],
     targets: [
         .target(
             name: "GistHubMarkdownEditor",
-            dependencies: ["StyledTextKit"]
+            dependencies: [
+                "StyledTextKit",
+                "cmark-gfm-swift",
+                "HTMLString"
+            ]
         ),
-        .testTarget(
-            name: "GistHubMarkdownEditorTests",
-            dependencies: ["GistHubMarkdownEditor"]
-        ),
+
         .target(
             name: "StyledTextKit",
             dependencies: []
