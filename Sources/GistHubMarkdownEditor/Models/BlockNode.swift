@@ -5,9 +5,9 @@ public protocol BlockNode {
 }
 
 public final class BlockModel {
-    let models: [BlockNode]
+    let nodes: [BlockNode]
 
-    init(models: [BlockNode]) {
-        self.models = models
+    init(nodes: [BlockNode]) {
+        self.nodes = nodes
     }
 }
