@@ -139,24 +139,28 @@ private extension Array where Iterator.Element == [ListElement] {
             case .unordered:
                 tick = level % 2 == 0
                     ? Constants.Strings.bullet
-                    : Constants.Strings.bullet
+                    : Constants.Strings.bulletHollow
             case .ordered:
                 tick = "\(i + 1)."
             }
 
             var spaces = ""
-
             for _ in 0 ..< level {
                 spaces += "  "
             }
 
-            builder.add(text: "\(spaces)\(tick)")
+            builder.add(text: "\(spaces)\(tick) ")
 
             c.forEach ({ cc in
                 cc.build(builder, options: options)
             }, joined: { _ in
                 builder.add(text: newline)
             })
+
+            // never append whitespace on the last comment
+            if i != count - 1 {
+                builder.add(text: newline)
+            }
         }
         return builder
     }
