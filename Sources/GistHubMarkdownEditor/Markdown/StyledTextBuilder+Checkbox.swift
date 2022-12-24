@@ -25,8 +25,18 @@ extension StyledTextBuilder {
 
 private extension UIImage {
     static func checkbox(checked: Bool, viewerCanUpdate: Bool) -> UIImage? {
-        let name = checked ? "checked" : "unchecked"
-        let disabled = viewerCanUpdate ? "" : "-disabled"
-        return UIImage(named: "\(name)\(disabled)", in: .main, with: nil)
+        let icon = UIImage(
+            named: checked ? "checked" : "unchecked",
+            in: .module, compatibleWith: nil
+        )?.withRenderingMode(.alwaysOriginal)
+        return viewerCanUpdate ? icon : icon?.alpha(0.5)
+    }
+
+    func alpha(_ value: CGFloat) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(at: CGPoint.zero, blendMode: .normal, alpha: value)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()?.withRenderingMode(.alwaysOriginal)
+        UIGraphicsEndImageContext()
+        return newImage!
     }
 }
