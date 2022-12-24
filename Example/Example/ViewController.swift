@@ -64,6 +64,7 @@ class ViewController: UIViewController {
 
         > quote
         > > quote 1
+        > > quote 2
 
         """
         present(MarkdownViewController(markdown: markdown), animated: true)

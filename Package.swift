@@ -21,6 +21,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/alexaubry/HTMLString", from: "6.0.0"),
+        .package(url: "https://github.com/raspu/Highlightr", from: "2.1.2")
     ],
     targets: [
         .target(
@@ -28,7 +29,8 @@ let package = Package(
             dependencies: [
                 "StyledTextKit",
                 "cmark-gfm-swift",
-                "HTMLString"
+                "HTMLString",
+                "Highlightr",
             ]
         ),
 

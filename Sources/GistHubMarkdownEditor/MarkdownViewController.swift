@@ -11,6 +11,7 @@ public final class MarkdownViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.register(MarkdownTextCell.self, forCellWithReuseIdentifier: MarkdownTextCell.identifier)
         view.register(MarkdownQuoteCell.self, forCellWithReuseIdentifier: MarkdownQuoteCell.identifier)
+        view.register(MarkdownCodeBlockCell.self, forCellWithReuseIdentifier: MarkdownCodeBlockCell.identifier)
         view.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "default")
         view.dataSource = self
         view.delegate = self
@@ -89,19 +90,22 @@ extension MarkdownViewController: UICollectionViewDataSource, UICollectionViewDe
             withReuseIdentifier: MarkdownTextCell.identifier,
             for: indexPath
         ) as? MarkdownTextCell,
-           let textRenderer = model as? StyledTextRenderer {
-            cell.configure(with: textRenderer)
+           let context = model as? StyledTextRenderer {
+            cell.configure(with: context)
             return cell
         } else if let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: MarkdownQuoteCell.identifier,
             for: indexPath
-        ) as? MarkdownQuoteCell,
-           let model = model as? MarkdownQuoteModel {
-            cell.configure(with: model)
+        ) as? MarkdownQuoteCell, let context = model as? MarkdownQuoteModel {
+            cell.configure(with: context)
             return cell
-        }
-
-        else {
+        } else if let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: MarkdownCodeBlockCell.identifier,
+            for: indexPath
+        ) as? MarkdownCodeBlockCell, let context = model as? MarkdownCodeBlockModel {
+            cell.configure(with: context)
+            return cell
+        } else {
             return collectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath)
         }
 
@@ -125,7 +129,16 @@ extension MarkdownViewController: UICollectionViewDataSource, UICollectionViewDe
                 width: width,
                 height: context.string.viewSize(in: width).height
             )
-        } else {
+        } else if let context = model as? MarkdownCodeBlockModel {
+            let width = collectionView.bounds.width - inset.left - inset.right
+            let inset = MarkdownCodeBlockCell.scrollViewInset
+            return CGSize(
+                width: width,
+                height: context.contentSize.height + inset.top + inset.bottom
+            )
+        }
+
+        else {
             return CGSize(width: 200, height: 200)
         }
     }

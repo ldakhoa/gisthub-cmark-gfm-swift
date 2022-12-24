@@ -255,8 +255,13 @@ private func makeModels(elements: [Element], options: CMarkOptions) -> [BlockNod
 //
 //        case .hr:
 //
-//        case .codeBlock(let text, let language):
-//
+        case .codeBlock(let text, let language):
+            endRunningText(true)
+            models.append(MarkdownCodeBlockModel.makeModel(
+                text: text,
+                language: language,
+                contentSizeCategory: options.contentSizeCategory)
+            )
         case .list(let items, let type):
             items.build(makeBuilder(), options: options, type: type)
         default: break
