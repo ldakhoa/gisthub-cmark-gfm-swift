@@ -64,7 +64,15 @@ private extension TextElement {
                 .strikethroughColor: builder.tipAttributes?[.foregroundColor] ?? Colors.foregroundDefault.color as AnyHashable
             ])
             children.build(builder, options: options, context: context)
-//        case .link(let children, _, let url):
+        case .link(let children, _, let url):
+            var attributes: [NSAttributedString.Key: AnyHashable] = [
+                .foregroundColor: Colors.accentForeground.color as AnyHashable,
+                .highlight: true
+            ]
+
+            attributes[MarkdownAttribute.url] = url ?? ""
+            builder.add(attributes: attributes)
+            children.build(builder, options: options, context: CMarkContext(inLink: true))
 
 //        case .mention(let login):
         case .checkbox(let checked, let originalRange):

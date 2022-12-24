@@ -12,7 +12,7 @@ final class MarkdownQuoteCell: UICollectionViewCell {
             right: 0)
     }
 
-    private let textView = MarkdownStyledTextView()
+    let textView = MarkdownStyledTextView()
     private var borders = [UIView]()
 
     override init(frame: CGRect) {

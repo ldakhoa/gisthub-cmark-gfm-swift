@@ -8,6 +8,7 @@
 import UIKit
 
 enum Colors {
+    case accentForeground
     case canvasSubtitle
     case foregroundDefault
     case background
@@ -15,6 +16,8 @@ enum Colors {
 
     var light: UIColor {
         switch self {
+        case .accentForeground:
+            return UIColor(colorValue: ColorValue(0x0969da))
         case .canvasSubtitle:
             return UIColor(colorValue: ColorValue(0xf6f8fa))
         case .foregroundDefault:
@@ -28,6 +31,8 @@ enum Colors {
 
     var dark: UIColor {
         switch self {
+        case .accentForeground:
+            return UIColor(colorValue: ColorValue(0x0969da))
         case .canvasSubtitle:
             return UIColor(colorValue: ColorValue(0x161b22))
         case .foregroundDefault:

@@ -92,12 +92,14 @@ extension MarkdownViewController: UICollectionViewDataSource, UICollectionViewDe
         ) as? MarkdownTextCell,
            let context = model as? StyledTextRenderer {
             cell.configure(with: context)
+            cell.textView.tapDelegate = self
             return cell
         } else if let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: MarkdownQuoteCell.identifier,
             for: indexPath
         ) as? MarkdownQuoteCell, let context = model as? MarkdownQuoteModel {
             cell.configure(with: context)
+            cell.textView.tapDelegate = self
             return cell
         } else if let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: MarkdownCodeBlockCell.identifier,
@@ -140,6 +142,24 @@ extension MarkdownViewController: UICollectionViewDataSource, UICollectionViewDe
 
         else {
             return CGSize(width: 200, height: 200)
+        }
+    }
+}
+
+// MARK: - MarkdownStyledTextViewDelegate
+
+extension MarkdownViewController: MarkdownStyledTextViewDelegate {
+    func didTap(cell: MarkdownStyledTextView, attribute: MarkdownAttributeHandling) {
+        switch attribute {
+        case .url(let url):
+            guard UIApplication.shared.canOpenURL(url) else { return }
+            UIApplication.shared.open(url)
+        case .email(let email):
+            if let url = URL(string: "mailto:\(email)") {
+                UIApplication.shared.open(url)
+            }
+        case .checkbox(let _):
+            break
         }
     }
 }
