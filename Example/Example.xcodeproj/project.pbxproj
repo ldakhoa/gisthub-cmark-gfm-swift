@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A2AADE0295491A100F50194 /* GistHubMarkdownEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 6A2AADDF295491A100F50194 /* GistHubMarkdownEditor */; };
 		6A3775422953C06C00C5C627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3775412953C06C00C5C627 /* AppDelegate.swift */; };
 		6A3775442953C06C00C5C627 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3775432953C06C00C5C627 /* SceneDelegate.swift */; };
 		6A3775462953C06C00C5C627 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3775452953C06C00C5C627 /* ViewController.swift */; };
 		6A3775492953C06C00C5C627 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A3775472953C06C00C5C627 /* Main.storyboard */; };
 		6A37754B2953C06D00C5C627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A37754A2953C06D00C5C627 /* Assets.xcassets */; };
 		6A37754E2953C06D00C5C627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A37754C2953C06D00C5C627 /* LaunchScreen.storyboard */; };
+		6A5F900E29607FBD00712CC6 /* NestedSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F900D29607FBD00712CC6 /* NestedSwiftUIView.swift */; };
+		6AA6DE9D2960C13D00C25455 /* GistHubMarkdownPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 6AA6DE9C2960C13D00C25455 /* GistHubMarkdownPreview */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +26,8 @@
 		6A37754A2953C06D00C5C627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A37754D2953C06D00C5C627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A37754F2953C06D00C5C627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A37755D2953C14500C5C627 /* GistHubMarkdownEditor */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GistHubMarkdownEditor; path = ..; sourceTree = "<group>"; };
+		6A5F900D29607FBD00712CC6 /* NestedSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedSwiftUIView.swift; sourceTree = "<group>"; };
+		6AA6DE9B2960C0EA00C25455 /* GistHubMarkdownPreview */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GistHubMarkdownPreview; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A2AADE0295491A100F50194 /* GistHubMarkdownEditor in Frameworks */,
+				6AA6DE9D2960C13D00C25455 /* GistHubMarkdownPreview in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +45,7 @@
 		6A3775352953C06C00C5C627 = {
 			isa = PBXGroup;
 			children = (
-				6A37755C2953C14500C5C627 /* Packages */,
+				6AA6DE9A2960C0EA00C25455 /* Packages */,
 				6A3775402953C06C00C5C627 /* Example */,
 				6A37753F2953C06C00C5C627 /* Products */,
 				6A37755E2953C16000C5C627 /* Frameworks */,
@@ -64,6 +66,7 @@
 				6A3775412953C06C00C5C627 /* AppDelegate.swift */,
 				6A3775432953C06C00C5C627 /* SceneDelegate.swift */,
 				6A3775452953C06C00C5C627 /* ViewController.swift */,
+				6A5F900D29607FBD00712CC6 /* NestedSwiftUIView.swift */,
 				6A3775472953C06C00C5C627 /* Main.storyboard */,
 				6A37754A2953C06D00C5C627 /* Assets.xcassets */,
 				6A37754C2953C06D00C5C627 /* LaunchScreen.storyboard */,
@@ -72,19 +75,19 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
-		6A37755C2953C14500C5C627 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				6A37755D2953C14500C5C627 /* GistHubMarkdownEditor */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		6A37755E2953C16000C5C627 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6AA6DE9A2960C0EA00C25455 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				6AA6DE9B2960C0EA00C25455 /* GistHubMarkdownPreview */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,7 +107,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				6A2AADDF295491A100F50194 /* GistHubMarkdownEditor */,
+				6AA6DE9C2960C13D00C25455 /* GistHubMarkdownPreview */,
 			);
 			productName = Example;
 			productReference = 6A37753E2953C06C00C5C627 /* Example.app */;
@@ -166,6 +169,7 @@
 				6A3775462953C06C00C5C627 /* ViewController.swift in Sources */,
 				6A3775422953C06C00C5C627 /* AppDelegate.swift in Sources */,
 				6A3775442953C06C00C5C627 /* SceneDelegate.swift in Sources */,
+				6A5F900E29607FBD00712CC6 /* NestedSwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,9 +389,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6A2AADDF295491A100F50194 /* GistHubMarkdownEditor */ = {
+		6AA6DE9C2960C13D00C25455 /* GistHubMarkdownPreview */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = GistHubMarkdownEditor;
+			productName = GistHubMarkdownPreview;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

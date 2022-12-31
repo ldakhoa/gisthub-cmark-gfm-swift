@@ -4,20 +4,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "GistHubMarkdownEditor",
+    name: "GistHubMarkdownPreview",
     platforms: [
         .iOS(.v16)
     ],
     products: [
         .library(
-            name: "GistHubMarkdownEditor",
-            targets: ["GistHubMarkdownEditor"]),
-        .library(
-            name: "StyledTextKit",
-            targets: ["StyledTextKit"]),
-        .library(
-            name: "cmark-gfm-swift",
-            targets: ["cmark-gfm-swift"])
+            name: "GistHubMarkdownPreview",
+            targets: ["GistHubMarkdownPreview"])
     ],
     dependencies: [
         .package(url: "https://github.com/alexaubry/HTMLString", from: "6.0.0"),
@@ -25,23 +19,15 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "GistHubMarkdownEditor",
+            name: "GistHubMarkdownPreview",
             dependencies: [
-                "StyledTextKit",
                 "cmark-gfm-swift",
                 "HTMLString",
                 "Highlightr",
-            ]
+            ],
+            resources: [.process("Resources")]
         ),
 
-        .target(
-            name: "StyledTextKit",
-            dependencies: []
-        ),
-        .testTarget(
-            name: "StyledTextKitTests",
-            dependencies: ["StyledTextKit"]
-        ),
         .target(
             name: "cmark-gfm-swift",
             dependencies: ["cmark_gfm"]
