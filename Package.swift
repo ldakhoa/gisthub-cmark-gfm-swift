@@ -11,7 +11,10 @@ let package = Package(
     products: [
         .library(
             name: "GistHubMarkdownPreview",
-            targets: ["GistHubMarkdownPreview"])
+            targets: ["GistHubMarkdownPreview"]),
+        .library(
+            name: "cmark-gfm-swift",
+            targets: ["cmark-gfm-swift"])
     ],
     dependencies: [
         .package(url: "https://github.com/alexaubry/HTMLString", from: "6.0.0"),
