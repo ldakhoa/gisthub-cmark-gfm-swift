@@ -14,7 +14,6 @@
 		6A37754B2953C06D00C5C627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A37754A2953C06D00C5C627 /* Assets.xcassets */; };
 		6A37754E2953C06D00C5C627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A37754C2953C06D00C5C627 /* LaunchScreen.storyboard */; };
 		6A5F900E29607FBD00712CC6 /* NestedSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F900D29607FBD00712CC6 /* NestedSwiftUIView.swift */; };
-		6AA6DE9D2960C13D00C25455 /* GistHubMarkdownPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 6AA6DE9C2960C13D00C25455 /* GistHubMarkdownPreview */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AA6DE9D2960C13D00C25455 /* GistHubMarkdownPreview in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +105,6 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				6AA6DE9C2960C13D00C25455 /* GistHubMarkdownPreview */,
 			);
 			productName = Example;
 			productReference = 6A37753E2953C06C00C5C627 /* Example.app */;
@@ -387,13 +384,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6AA6DE9C2960C13D00C25455 /* GistHubMarkdownPreview */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = GistHubMarkdownPreview;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6A3775362953C06C00C5C627 /* Project object */;
 }

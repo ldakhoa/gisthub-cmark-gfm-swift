@@ -10,9 +10,6 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "GistHubMarkdownPreview",
-            targets: ["GistHubMarkdownPreview"]),
-        .library(
             name: "cmark-gfm-swift",
             targets: ["cmark-gfm-swift"])
     ],
