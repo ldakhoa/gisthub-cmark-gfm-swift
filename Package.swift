@@ -16,14 +16,6 @@ let package = Package(
     dependencies: [],
     targets: [
         .target(
-            name: "GistHubMarkdownPreview",
-            dependencies: [
-                "cmark-gfm-swift",
-            ],
-            resources: [.process("Resources")]
-        ),
-
-        .target(
             name: "cmark-gfm-swift",
             dependencies: ["cmark_gfm"]
         ),
