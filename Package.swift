@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "GistHubMarkdownPreview",
+    name: "gisthub-cmark-gfm-swift",
     platforms: [
         .iOS(.v16)
     ],
@@ -13,17 +13,12 @@ let package = Package(
             name: "cmark-gfm-swift",
             targets: ["cmark-gfm-swift"])
     ],
-    dependencies: [
-        .package(url: "https://github.com/alexaubry/HTMLString", from: "6.0.0"),
-        .package(url: "https://github.com/raspu/Highlightr", from: "2.1.2")
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "GistHubMarkdownPreview",
             dependencies: [
                 "cmark-gfm-swift",
-                "HTMLString",
-                "Highlightr",
             ],
             resources: [.process("Resources")]
         ),
